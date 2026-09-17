@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package models;
 
 /**
@@ -12,13 +9,13 @@ public class Bloque {
     int id;
     String datos;
     String hashAnterior;
-    String hashActual;
+    //String hashActual;
 
-    public Bloque(int id, String datos, String hashAnterior, String hashActual) {
+    public Bloque(int id, String datos, String hashAnterior) {
         this.id = id;
         this.datos = datos;
         this.hashAnterior = hashAnterior;
-        this.hashActual = hashActual;
+        //this.hashActual = hashActual;
     }
     
     
