@@ -1,5 +1,6 @@
 package app;
 
+import java.util.Scanner;
 import co.edu.unicartagena.list.Lista;
 import co.edu.unicartagena.list.Nodo;
 import models.Bloque;
@@ -17,6 +18,9 @@ public class App {
         System.out.println("5. Buscar");        // search
         System.out.println("6. Guardar");      // save, guarda en un archivo
         System.out.println("7. Abrir");     // open, abre el archivo que decribe los bloques blockchain
+        System.out.println("Seleccione una opcion: ");
+        Scanner op = new Scanner(System.in);
         
+       
     }
 }
