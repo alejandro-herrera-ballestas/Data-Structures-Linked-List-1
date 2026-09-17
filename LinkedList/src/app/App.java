@@ -16,6 +16,7 @@ public class App {
         System.out.println("4. Eliminar (limitado)");       // delete
         System.out.println("5. Buscar");        // search
         System.out.println("6. Guardar");      // save, guarda en un archivo
+        System.out.println("7. Abrir");     // open, abre el archivo que decribe los bloques blockchain
         
     }
 }
