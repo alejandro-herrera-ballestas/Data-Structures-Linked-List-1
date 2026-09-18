@@ -105,7 +105,7 @@ public class Lista <T> implements Iterable<T>{
 						  temp = temp.sig;
 						  band=true;
 						}
-				    if(band){//
+				    if(band){// el valor del nuevo nodo es mayor que el primer nodo
 				    	nuevoNodo.sig =anterior.sig;
 				    	anterior.sig = nuevoNodo;
 				    }
