@@ -6,11 +6,12 @@ package models;
 
 import co.edu.unicartagena.list.Lista;
 import co.edu.unicartagena.list.Nodo;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-/**
- *
- * @author alejandro
- */
 public class Blockchain {
     private Lista<Bloque> cadena;   // lista enlazada para almacenar los bloques de la cadena de bloques
 
@@ -46,5 +47,39 @@ public class Blockchain {
             }
         }
         return null;
+    }
+
+    // guardar en un archivo la cadena de bloques (cada bloque en una línea, con sus atributos separados por comas)
+    public void guardarArchivo(String nombreArchivo) {
+        try {
+            FileWriter archivo = new FileWriter(nombreArchivo);
+            for (Bloque bloque : cadena) {
+                archivo.write(bloque.id + "," + bloque.datos + "," + bloque.hashAnterior + "," + bloque.hashActual + "\n");
+            }
+            archivo.close();
+        } catch (IOException e) {
+            System.out.println("Error al guardar el archivo: " + e.getMessage());
+        }
+    }
+
+    // abrir un archivo y cargar la cadena de bloques (cada línea representa un bloque con sus atributos separados por comas)
+    public void abrirArchivo(String nombreArchivo) {
+        try {
+            File archivo = new File(nombreArchivo);
+            Scanner sc = new Scanner(archivo);
+            
+            while (sc.hasNextLine()) {
+                String linea = sc.nextLine();
+                String[] atributos = linea.split(",");
+                int id = Integer.parseInt(atributos[0]);
+                String datos = atributos[1];
+                String hashAnterior = atributos[2];
+                String hashActual = atributos[3];
+                cadena.adicionarFinal(new Nodo<>(new Bloque(id, datos, hashAnterior)));
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo no encontrado: " + e.getMessage());
+        }
     }
 }
