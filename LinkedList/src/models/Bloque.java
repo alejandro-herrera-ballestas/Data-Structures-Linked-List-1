@@ -15,7 +15,7 @@ public class Bloque {
         this.id = id;
         this.datos = datos;
         this.hashAnterior = hashAnterior;
-        this.hashActual = Integer.toHexString(Objects.hash(id, datos, hashAnterior));
+        this.hashActual = Integer.toHexString(Objects.hash(id, datos, hashAnterior));       // calcular el hash actual del bloque
     }
 
     @Override
