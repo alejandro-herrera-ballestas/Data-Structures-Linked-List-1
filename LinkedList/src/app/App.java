@@ -1,3 +1,6 @@
+// Alejandro Herrera -> 6902510014
+// Juan Esteban Primera -> 69025100
+// Aaron Hernandez -> 69025100
 package app;
 
 import java.util.Scanner;
