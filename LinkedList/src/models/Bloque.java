@@ -1,10 +1,11 @@
+// Alejandro Herrera -> 6902510014
+// Juan Esteban Primera -> 69025100
+// Aaron Hernandez -> 69025100
+
 
 package models;
 import java.util.Objects;
-/**
- *
- * @author alejandro
- */
+
 public class Bloque {
     int id;
     String datos;
