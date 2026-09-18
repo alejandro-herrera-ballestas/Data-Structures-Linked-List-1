@@ -4,14 +4,20 @@ import java.util.Scanner;
 import co.edu.unicartagena.list.Lista;
 import co.edu.unicartagena.list.Nodo;
 import models.Bloque;
+import models.Blockchain;
 
 
 public class App {
     public static void main(String args[]){
-	
-        Lista<Bloque> l = new Lista<>();
+        Blockchain blockchain = new Blockchain();
+
         
-        //              MENU
+        Scanner sc = new Scanner(System.in);
+        int op = -1;
+
+        while (op != 0) {
+
+            //              MENU
         System.out.println("            Menu                ");
         System.out.println("1. Nueva Transaccion");     // create
         System.out.println("2. Ver transacciones");     // read
@@ -22,14 +28,14 @@ public class App {
         System.out.println("7. Abrir archivo");     // open, abre el archivo que decribe los bloques blockchain
         System.out.println("0. Salir");
         System.out.println("Seleccione una opcion: ");
-        
-        Scanner sc = new Scanner(System.in);
-        int op = sc.nextInt();
-        while (op != 0) {
+        op = sc.nextInt();
+
             switch (op) {
                 case 1: 
                     break;
                 case 2:
+                    System.out.println("Transacciones en la cadena de bloques:");
+                    blockchain.mostrarCadena();
                     break;
                 case 3:
                     break;
@@ -49,6 +55,6 @@ public class App {
                     break;
             }
         }
-       
+       sc.close();
     }
 }
