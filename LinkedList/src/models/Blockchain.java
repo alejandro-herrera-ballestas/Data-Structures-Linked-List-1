@@ -1,7 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+// Alejandro Herrera -> 6902510014
+// Juan Esteban Primera -> 69025100
+// Aaron Hernandez -> 69025100
+
 package models;
 
 import co.edu.unicartagena.list.Lista;
