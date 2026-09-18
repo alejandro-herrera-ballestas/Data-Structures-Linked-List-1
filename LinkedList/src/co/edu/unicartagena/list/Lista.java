@@ -1,6 +1,9 @@
 package co.edu.unicartagena.list;
 
-public class Lista <T>{
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class Lista <T> implements Iterable<T>{
 	Nodo<T> primerNodo;
 	int tamaño = 0;
 	public Lista(){
@@ -127,5 +130,26 @@ public class Lista <T>{
 		}
 		else
 			System.out.println("La Lista esta vacia");
+	}
+
+	@Override
+	public Iterator<T> iterator(){
+		return new Iterator<T>(){
+			private Nodo<T> actual = primerNodo;
+
+			@Override
+			public boolean hasNext(){
+				return actual != null;
+			}
+
+			@Override
+			public T next(){
+				if(!hasNext())
+					throw new NoSuchElementException();
+				T dato = actual.getDato();
+				actual = actual.sig;
+				return dato;
+			}
+		};
 	}
 }

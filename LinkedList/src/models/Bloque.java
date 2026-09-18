@@ -17,6 +17,16 @@ public class Bloque {
         this.hashAnterior = hashAnterior;
         this.hashActual = Integer.toHexString(Objects.hash(id, datos, hashAnterior));
     }
+
+    @Override
+    public String toString() {
+        return "Bloque{" +
+                "id=" + id +
+                ", datos='" + datos + '\'' +
+                ", hashAnterior='" + hashAnterior + '\'' +
+                ", hashActual='" + hashActual + '\'' +
+                '}';
+    }
     
     
     
