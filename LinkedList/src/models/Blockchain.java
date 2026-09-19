@@ -49,6 +49,16 @@ public class Blockchain {
         return null;
     }
 
+    // actualiza, no lo modifica, agrega un nuevo bloque que lo corrige
+    public boolean actualizarBloque(String hashOriginal, String nuevosDatos) {
+        Bloque bloqueOriginal = buscarBloque(hashOriginal);
+        if (bloqueOriginal == null) {
+            return false; 
+        }
+        String datosCorreccion = "[Correccion del bloque " + bloqueOriginal.id + "]: " + nuevosDatos;
+        agregarBloque(datosCorreccion); 
+        return true;
+    } 
     // guardar en un archivo la cadena de bloques (cada bloque en una línea, con sus atributos separados por comas)
     public void guardarArchivo(String nombreArchivo) {
         try {

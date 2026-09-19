@@ -13,10 +13,7 @@ import models.Blockchain;
 public class App {
     public static void main(String args[]){
         Blockchain blockchain = new Blockchain();
-        blockchain.agregarBloque("Alice envía 10 BTC a Bob");
-        blockchain.agregarBloque("Bob envía 5 BTC a Charlie");
-        blockchain.agregarBloque("Charlie envía 2 BTC a Alice");
-        blockchain.mostrarCadena();
+
         
         Scanner sc = new Scanner(System.in);
         int op = -1;
@@ -48,6 +45,17 @@ public class App {
                     blockchain.mostrarCadena();
                     break;
                 case 3:
+                    System.out.println("Ingrese el hash del bloque a actualizar: ");
+                    sc.nextLine();
+                    String hashActualizar = sc.nextLine();
+                    System.out.println("Ingrese los nuevos datos (correccion): ");
+                    String nuevosDatos = sc.nextLine();
+                    boolean actualizado = blockchain.actualizarBloque(hashActualizar, nuevosDatos);
+                    if (actualizado) {
+                        System.out.println("Correccion agregada exitosamente como nuevo bloque.");
+                    } else {
+                        System.out.println("No se encontro un bloque con ese hash.");
+                    }
                     break;
                 case 4:
                     break;
