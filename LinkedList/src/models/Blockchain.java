@@ -92,4 +92,14 @@ public class Blockchain {
             System.out.println("Archivo no encontrado: " + e.getMessage());
         }
     }
+    
+    public boolean eliminarBloque(String hashObjetivo) {
+    Bloque objetivo = buscarBloque(hashObjetivo); // reutiliza tu método search
+    if (objetivo == null) {
+        return false; // no existe ese bloque
+    }
+    String mensaje = "Bloque " + objetivo.getId() + " invalidado (reversión de: " + objetivo.getDatos() + ")";
+    agregarBloque(mensaje); // se agrega como un bloque normal, encadenado al final
+    return true;
+}
 }

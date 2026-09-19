@@ -28,6 +28,24 @@ public class Bloque {
                 ", hashActual='" + hashActual + '\'' +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDatos() {
+        return datos;
+    }
+
+    public String getHashAnterior() {
+        return hashAnterior;
+    }
+
+    public String getHashActual() {
+        return hashActual;
+    }
+
+    
     
     
     
