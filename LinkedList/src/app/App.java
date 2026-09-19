@@ -13,7 +13,10 @@ import models.Blockchain;
 public class App {
     public static void main(String args[]){
         Blockchain blockchain = new Blockchain();
-
+        blockchain.agregarBloque("Alice envía 10 BTC a Bob");
+        blockchain.agregarBloque("Bob envía 5 BTC a Charlie");
+        blockchain.agregarBloque("Charlie envía 2 BTC a Alice");
+        blockchain.mostrarCadena();
         
         Scanner sc = new Scanner(System.in);
         int op = -1;
