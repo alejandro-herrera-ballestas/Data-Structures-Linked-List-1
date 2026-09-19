@@ -1,3 +1,5 @@
 
 /LinkedList/nbproject/private
 /LinkedList/build
+/LinkedList/build/classes
+*.class
