@@ -12,6 +12,7 @@ import models.Blockchain;
 
 public class App {
     public static void main(String args[]){
+        
         Blockchain blockchain = new Blockchain();
         blockchain.agregarBloque("Alice envía 10 BTC a Bob");
         blockchain.agregarBloque("Bob envía 5 BTC a Charlie");
@@ -37,17 +38,23 @@ public class App {
         op = sc.nextInt();
 
             switch (op) {
+                
                 case 1: 
+                    
                     System.out.println("Ingrese los datos de la transaccion: ");
                     sc.nextLine(); // consume the newline character
                     String datos = sc.nextLine();
                     blockchain.agregarBloque(datos);
                     break;
+                    
                 case 2:
+                    
                     System.out.println("Transacciones en la cadena de bloques:");
                     blockchain.mostrarCadena();
                     break;
+                    
                 case 3:
+                    
                     System.out.println("Ingrese el hash del bloque a actualizar: ");
                     sc.nextLine();
                     String hashActualizar = sc.nextLine();
@@ -60,9 +67,17 @@ public class App {
                         System.out.println("No se encontro un bloque con ese hash.");
                     }
                     break;
+                
                 case 4:
+                    
+                    System.out.println("Ingrese el bloque");
+                    sc.nextLine();
+                    String hashEliminar = sc.nextLine();
+                    blockchain.eliminarBloque(hashEliminar);
                     break;
+                
                 case 5:
+                    
                     System.out.println("Ingrese el hash del bloque a buscar: ");
                     sc.nextLine(); // consume the newline character
                     String hash = sc.nextLine();
@@ -73,22 +88,30 @@ public class App {
                         System.out.println("Bloque no encontrado");
                     }
                     break;
+                
                 case 6:
+                    
                     System.out.println("Ingrese el nombre del archivo para guardar la cadena de bloques: ");
                     sc.nextLine();
                     String nombreArchivo = sc.nextLine();
                     blockchain.guardarArchivo(nombreArchivo);
+                    
                     break;
                 case 7:
+                    
                     System.out.println("Ingrese el nombre del archivo para abrir la cadena de bloques: ");
                     sc.nextLine();
                     String nombreArchivoAbrir = sc.nextLine();
                     blockchain.abrirArchivo(nombreArchivoAbrir);
                     break;
+                
                 case 0:
+                    
                     System.out.println("Saliendo exitosamente del sistema...");
                         break;
+                
                 default:
+                    
                     System.out.println("Ingrese una opcion valida!");
                     break;
             }

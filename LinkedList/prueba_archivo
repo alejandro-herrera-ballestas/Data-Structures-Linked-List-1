@@ -1,0 +1,6 @@
+1,Alice envía 10 BTC a Bob,0,f125ee4b
+2,Bob envía 5 BTC a Charlie,f125ee4b,1d078f0e
+3,Charlie envía 2 BTC a Alice,1d078f0e,8f2e0be8
+4,Alejandro envia 67 BTC a Aaron y Juan,8f2e0be8,cc85c45
+5,[Correccion del bloque 1]: Juan y Aaron envian 67 BTC a Alejandro,cc85c45,35af8bb0
+6,Bloque 3 invalidado (reversión de: Charlie envía 2 BTC a Alice),35af8bb0,589d7a5e
