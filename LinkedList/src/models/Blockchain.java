@@ -19,10 +19,10 @@ public class Blockchain {
         this.cadena = new Lista<>();
     }
 
-    // funcion que agrega un nuevo bloque a la cadena de bloques (automaticamente al final de la lista)
+    // funcion que agrega un nuevo bloque a la cadena de bloques 
     public void agregarBloque(String datos) {
         int id = 1;
-        String hashAnterior = "0";
+        String hashAnterior = "None";
 
         for (Bloque bloque : cadena) {      // recorrer la lista de bloques para obtener el último bloque y calcular el id y hashAnterior del nuevo bloque
             id = bloque.id + 1;
@@ -39,7 +39,7 @@ public class Blockchain {
         }
     }
 
-    // busca un bloque en la cadena de bloques por su hash y devuelve el bloque si se encuentra, o null si no se encuentra
+    // busca un bloque en la cadena de bloques por su hash 
     public Bloque buscarBloque(String hash) {
         for (Bloque bloque : cadena) {
             if (bloque.hashActual.equals(hash)) {
@@ -49,7 +49,7 @@ public class Blockchain {
         return null;
     }
 
-    // actualiza, no lo modifica, agrega un nuevo bloque que lo corrige
+    // utiliza buscarBloque y corrige / actuatilza los dats (sin eliminar)
     public boolean actualizarBloque(String hashOriginal, String nuevosDatos) {
         Bloque bloqueOriginal = buscarBloque(hashOriginal);
         if (bloqueOriginal == null) {
@@ -59,7 +59,7 @@ public class Blockchain {
         agregarBloque(datosCorreccion); 
         return true;
     } 
-    // guardar en un archivo la cadena de bloques (cada bloque en una línea, con sus atributos separados por comas)
+    // guardar en un archivo la cadena de bloques 
     public void guardarArchivo(String nombreArchivo) {
         try {
             FileWriter archivo = new FileWriter(nombreArchivo);
@@ -72,7 +72,7 @@ public class Blockchain {
         }
     }
 
-    // abrir un archivo y cargar la cadena de bloques (cada línea representa un bloque con sus atributos separados por comas)
+    // abrir un archivo y cargar la cadena de bloques 
     public void abrirArchivo(String nombreArchivo) {
         try {
             File archivo = new File(nombreArchivo);
@@ -93,8 +93,9 @@ public class Blockchain {
         }
     }
     
+    // busca el bloque y lo "elimina"
     public boolean eliminarBloque(String hashObjetivo) {
-    Bloque objetivo = buscarBloque(hashObjetivo); // reutiliza tu método search
+    Bloque objetivo = buscarBloque(hashObjetivo); 
     if (objetivo == null) {
         return false; // no existe ese bloque
     }

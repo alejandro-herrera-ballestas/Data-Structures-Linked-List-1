@@ -19,10 +19,12 @@ public class Bloque {
         this.hashActual =  calcularHash(id, datos, hashAnterior);
     }
 
+    // metodo para calcular hash
     private String calcularHash(int id, String datos, String hashAnterior) {
         return Integer.toHexString(Objects.hash(id, datos, hashAnterior));
     }
     
+    // formato para mostrar el bloque
     @Override
     public String toString() {
         return "Bloque " + id + ":\n" +

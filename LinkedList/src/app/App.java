@@ -42,7 +42,7 @@ public class App {
                 case 1: 
                     
                     System.out.println("Ingrese los datos de la transaccion: ");
-                    sc.nextLine(); // consume the newline character
+                    sc.nextLine(); 
                     String datos = sc.nextLine();
                     blockchain.agregarBloque(datos);
                     break;
@@ -79,7 +79,7 @@ public class App {
                 case 5:
                     
                     System.out.println("Ingrese el hash del bloque a buscar: ");
-                    sc.nextLine(); // consume the newline character
+                    sc.nextLine(); 
                     String hash = sc.nextLine();
                     Bloque bloque = blockchain.buscarBloque(hash);
                     if (bloque != null) {
