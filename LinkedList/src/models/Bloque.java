@@ -16,17 +16,19 @@ public class Bloque {
         this.id = id;
         this.datos = datos;
         this.hashAnterior = hashAnterior;
-        this.hashActual = Integer.toHexString(Objects.hash(id, datos, hashAnterior));       // calcular el hash actual del bloque
+        this.hashActual =  calcularHash(id, datos, hashAnterior);
     }
 
+    private String calcularHash(int id, String datos, String hashAnterior) {
+        return Integer.toHexString(Objects.hash(id, datos, hashAnterior));
+    }
+    
     @Override
     public String toString() {
-        return "Bloque{" +
-                "id=" + id +
-                ", datos='" + datos + '\'' +
-                ", hashAnterior='" + hashAnterior + '\'' +
-                ", hashActual='" + hashActual + '\'' +
-                '}';
+        return "Bloque " + id + ":\n" +
+                "Datos: \"" + datos + "\"\n" +
+                "Hash anterior: " + hashAnterior + "\n" +
+                "Hash actual: " + hashActual + "\n";
     }
 
     public int getId() {
